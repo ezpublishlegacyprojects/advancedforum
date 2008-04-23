@@ -1,1 +1,0 @@
-{node_view_gui view='full' content_node=$node.parent}
