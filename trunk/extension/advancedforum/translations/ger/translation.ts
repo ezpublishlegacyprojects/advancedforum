@@ -3,10 +3,7 @@
     <name>design/standard/notification</name>
     <message>
       <source>Node notification</source>
-      <translation>
-Knotensignalisierung</translation>
-      <translated>
-Knotensignalisierung</translated>
+      <translation>Knotensignalisierung</translation>
     </message>
     <message>
       <source>Name</source>
