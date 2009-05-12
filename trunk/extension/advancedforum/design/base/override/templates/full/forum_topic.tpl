@@ -90,7 +90,11 @@
                     <div class="element">
                         <form method="post" action={"content/action/"|ezurl}>
                             <input class="button forum-new-reply" type="submit" name="NewButton" value="{'New reply'|i18n( 'extension/advancedforum' )}" />
-                            <input type="hidden" name="ContentLanguageCode" value="{$node.object.language_codes.0}" />
+                            {if ezini('ForumSettings','CreateLanguage','forum.ini')}
+                                <input type="hidden" name="ContentLanguageCode" value="{ezini('ForumSettings','CreateLanguage','forum.ini')}" />
+                            {else}
+                                <input type="hidden" name="ContentLanguageCode" value="{ezini('RegionalSettings','Locale')}" />
+                            {/if}
                             <input type="hidden" name="ContentNodeID" value="{$node.node_id}" />
                             <input type="hidden" name="ContentObjectID" value="{$node.contentobject_id}" />
                             <input type="hidden" name="NodeID" value="{$node.node_id}" />
@@ -244,7 +248,6 @@
         </div>
     </div>
 </div>
-
 {include name=navigator
          uri='design:navigator/google.tpl'
          page_uri=$node.url_alias
