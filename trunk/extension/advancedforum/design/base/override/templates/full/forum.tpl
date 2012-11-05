@@ -168,9 +168,9 @@
                 {section var=reply loop=$last_reply show=$last_reply}
                 <div class="attribute-byline">
                                 {section show=$topic_reply_count|gt( 19 )}
-                    {def $link=concat( $reply.parent.url_alias, '/(offset)/', sub( $topic_reply_count, mod( $topic_reply_count, 20 ) ) , '#msg', $reply.node_id )}
+                    {def $link=concat( $topic.url_alias, '/(offset)/', sub( $topic_reply_count, mod( $topic_reply_count, 20 ) ) , '#msg', $reply.node_id )}
                 {section-else}
-                    {def $link=concat( $reply.parent.url_alias, '#msg', $reply.node_id )}
+                    {def $link=concat( $topic.url_alias, '#msg', $reply.node_id )}
                 {/section}
                    <p class="date"><a href={$link|ezurl}>{$reply.object.published|l10n(shortdatetime)}</a></p>
                    <p class="author">
