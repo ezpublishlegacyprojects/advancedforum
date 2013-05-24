@@ -6,7 +6,7 @@ class ezaddlanguageType extends eZWorkflowEventType
 	
 	function ezaddlanguageType()
 	{
-		$this->eZWorkflowEventType( ezaddlanguageType::WORKFLOW_TYPE_STRING, ezi18n( 'kernel/workflow/event', "Add Language" ) );
+		$this->eZWorkflowEventType( ezaddlanguageType::WORKFLOW_TYPE_STRING, ezpI18n::tr( 'kernel/workflow/event', "Add Language" ) );
 		$this->setTriggerTypes( array( 'content' => array( 'read' => array( 'before' ) ) ) );
 	}
 
